@@ -1,0 +1,88 @@
+﻿信息系统与数据库技术练习12答题卡
+
+班级：信息管理2班   
+姓名：黄家福
+学号：20190307227   
+
+*注：排除答案放置在序号下方。* /
+
+（一）
+1。
+使用项目
+
+
+2。
+创建视图V_EP
+如
+选择EP.Eid，Ename，EP .Pid，Pname，工资
+来自员工JOIN EP JOIN项目
+ON Project.Pid = EP.Pid
+ON Employee.Eid = EP.Eid
+
+
+3。
+选择*
+来自V_EP
+
+
+
+4。
+选择Eid，Ename，Pname，工资
+来自V_EP
+其中Pname IN（'1＃'，'3＃'，'5＃'）
+
+
+5，
+创建视图V_Pay
+如
+SELECT Employee.Eid，Ename，Esex，BasePay + Bonus AS TotalPay，（BasePay + Bonus）-Insurance AS RealPay
+来自员工
+
+
+6。
+选择*
+来自V_Pay
+
+7。
+创建视图v_emp
+如
+SELECT Department.Dname，Employee。*
+来自部门加入员工
+开启Department.Did = Employee.Did
+
+8。
+选择 *
+来自v_emp
+WHERE Dname ='财务部'
+
+9。
+EXEC Sp_depends v_emp
+
+10。
+EXEC Sp_helptext v_emp
+
+
+11。
+ALTER VIEW V_emp
+加密
+如
+SELECT Department.Dname，Employee。*
+来自部门加入员工
+开启Department.Did = Employee.Did
+
+12
+EXEC Sp_helptext v_emp
+
+13
+删除视图v_emp
+
+14。
+SELECT Did，Dname，Project。*
+来自部门CROSS JOIN项目
+WHERE Dname ='财务部'和Pname类似'％2％'
+
+15
+选择B. *
+从员工A加入员工B
+ON A.Did = B.Did
+WHERE A.Ename ='陈燕玲'
